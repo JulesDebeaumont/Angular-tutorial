@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
 * {
     margin: 0px;
     padding: 0px;
-    font-weight: 300;
 }
 
 body {
@@ -32,6 +32,8 @@ body {
 .heroItem {
     display: flex;
     justify-content: center;
+    align-items: center;
+    align-content: center;
     flex-direction: row;
     background-color: #222;
     border: solid 1px #444;
@@ -39,6 +41,11 @@ body {
     padding: 20px;
     transition: all 0.2s;
     margin: 15px;
+    color: #eee;
+}
+
+.heroItem > a {
+    margin-top: 6px;
 }
 
 .heroItem:hover {
@@ -67,9 +74,4 @@ body {
     font-size: 25px;
     display: flex;
     flex-direction: column;
-}
-
-.newHeroForm {
-    display: flex;
-    align-items: center;
 }

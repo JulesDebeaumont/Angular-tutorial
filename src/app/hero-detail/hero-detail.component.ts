@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../interfaces/hero'
+import { Hero } from '../classes/hero'
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService } from '../services/hero.service';
@@ -15,7 +15,7 @@ export class HeroDetailComponent implements OnInit {
   // Equivalent d'une propType
   // Ici on dit que la prop reçu (@Input) selectedHero est une instance de la classe Hero
   // Nécéssite l'import de Input
-  @Input() selectedHero?: Hero
+  // @Input() selectedHero?: Hero
 
   hero?: Hero
 

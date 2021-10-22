@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 // interfaces
-import { Hero } from '../interfaces/hero'
+import { Hero } from '../classes/hero'
 // services
 import { MessageService } from './message.service';
 // import { HEROES } from '../mock/mock-heroes';

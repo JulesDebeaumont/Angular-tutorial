@@ -6,9 +6,9 @@
     top: 0%;
     left: 0%;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
+    padding-left: 20px;
     background-image: linear-gradient(to right, #11347e 0%, #3584A7 51%, #30D2BE 100%);
-    font-weight: 600;
     font-size: 22px;
 }
 

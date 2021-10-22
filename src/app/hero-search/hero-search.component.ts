@@ -7,7 +7,7 @@ import {
 // services
 import { HeroService } from '../services/hero.service';
 // interfaces
-import { Hero } from '../interfaces/hero';
+import { Hero } from '../classes/hero';
 
 
 @Component({

@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 // interfaces
-import { Hero } from '../interfaces/hero';
+import { Hero } from '../classes/hero';
 // services
 import { HeroService } from '../services/hero.service';
 import { LoadingService } from '../services/loading.service';
@@ -68,26 +68,6 @@ export class HeroesComponent implements OnInit {
       })
 
     // TODO revoir la gestion du loading si une erreur survient
-  }
-
-
-  /**
-   * Add a new hero to the list
-   * @param heroName Name of the new hero
-   * @returns {void}
-   */
-  add(heroName: string): void {
-    heroName = heroName.trim()
-    if (heroName === undefined) {
-      return
-    }
-
-    // Ici je créer un objet avec un name qui sera égale à heroName
-    // Cet objet sera ensite défini comme une instance de Hero
-    this.heroService.createHero({ name: heroName } as Hero)
-      .subscribe((hero) => {
-        this.heroes.push(hero)
-      })
   }
 
 

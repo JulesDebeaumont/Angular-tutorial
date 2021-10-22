@@ -1,0 +1,35 @@
+<div class="heroesList">
+    <h1 class="sectionTitle">New hero</h1>
+    {{ model | json }}
+    <form class="newHeroForm" #heroForm="ngForm">
+        <label for="heroName">Hero's name : </label>
+        <input 
+        id="heroName" 
+        type="text" 
+        requiered 
+        placeholder="Name of the new hero"
+        [(ngModel)]="model.name"
+        name="name"
+        />
+
+        <label for="heroAlterEgo">Hero's alterego : </label>
+        <input 
+        id="heroAlterEgo"
+        type="text"
+        placeholder="Alter-ego of the Hero"
+        [(ngModel)]="model.alterEgo"
+        name="alterEgo"
+         />
+
+        <label for="power">Hero's power : </label>
+        <select id="power" required>
+            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button class="backButton heroItem">
+            Add hero
+        </button>
+    </form>
+
+</div>
