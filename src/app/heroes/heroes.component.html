@@ -1,0 +1,30 @@
+<div class="heroesList">
+	<h1 class="sectionTitle">Heroes list</h1>
+	<ul class="heroListItem" *ngIf="this.loadingService.loading === false">
+		<li class="heroItem" *ngFor="let hero of heroes">
+			<!-- <li class="heroItem" *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"> -->
+			<a routerLink="/detail/{{hero.id}}">
+				<h2>{{hero.name | uppercase}}</h2>
+			</a>
+			<button class="deleteButton" (click)="delete(hero)">x</button>
+		</li>
+	</ul>
+	<div *ngIf="this.loadingService.loading === true">Chargement...</div>
+</div>
+
+<div class="heroesList">
+	<h1 class="sectionTitle">New hero</h1>
+
+	<div class="newHeroForm">
+		<label for="new-hero">New hero's name : </label>
+		<input id="new-hero" #heroName placeholder="Name of the new hero" />
+		<!-- (click) passes input value to add() and then clears the input -->
+		<button class="backButton heroItem" (click)="add(heroName.value); heroName.value=''">
+			Add hero
+		</button>
+	</div>
+
+</div>
+
+<!-- On met la variable selectedHero en props pour le composant hero-detail -->
+<!-- <app-hero-detail [selectedHero]="selectedHero"></app-hero-detail> -->

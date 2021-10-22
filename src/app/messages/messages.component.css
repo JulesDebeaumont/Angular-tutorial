@@ -1,0 +1,24 @@
+.messages {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+    background-color: #222;
+}
+
+.messageList {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+}

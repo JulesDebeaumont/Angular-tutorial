@@ -1,0 +1,22 @@
+<div class="detail" *ngIf="hero !== undefined">
+	<h1>{{hero.name }}'s details
+	</h1>
+	<div class="heroItemDetail">
+		<div>
+			<span>Id:
+			</span>
+			{{hero.id}}
+		</div>
+		<div>
+			<label for="hero-name">Name:</label>
+			<input id="hero-name" [(ngModel)]="hero.name" placeholder="Name">
+		</div>
+
+	</div>
+
+	<div class="buttonList">
+		<button class="backButton heroItem" (click)="goBack()">Back</button>
+		<button class="backButton heroItem" (click)="save()">Save</button>
+	</div>
+
+</div>

@@ -1,1 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-weight: 300;
+}
+
+body {
+    background-color: #333;
+    color: #eee;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 2em;
+}
+
+.sectionTitle {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-weight: 350;
+    border-bottom: 1px solid #666;
+    padding-bottom: 3px;
+}
+
+.heroListItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.heroItem {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #222;
+    border: solid 1px #444;
+    border-radius: 20px;
+    padding: 20px;
+    transition: all 0.2s;
+    margin: 15px;
+}
+
+.heroItem:hover {
+    background-color: #444;
+    border: solid 1px #666;
+    color: #fff;
+    cursor: pointer;
+}
+
+.backButton {
+    background-color: #222;
+    border-radius: 10px;
+    border: 1px solid #666;
+    color: #eee;
+    padding: 9px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.buttonList {
+    display: flex;
+    flex-direction: row;
+}
+
+.newHeroSection {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.newHeroForm {
+    display: flex;
+    align-items: center;
+}

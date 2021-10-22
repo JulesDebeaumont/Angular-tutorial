@@ -1,0 +1,8 @@
+<div class="messages" *ngIf="messageService.messages.length > 0">
+	<button class="backButton heroItem" (click)="messageService.clear()">Clear messages</button>
+	<ul class="messageList">
+		<li *ngFor="let message of messageService.messages">
+			- {{ message }}
+		</li>
+	</ul>
+</div>

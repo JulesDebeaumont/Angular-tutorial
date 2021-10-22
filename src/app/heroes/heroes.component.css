@@ -1,0 +1,32 @@
+h2 {
+    border-bottom: 1px solid #666;
+}
+
+.selected, .selected:hover {
+    background-color: #11347e;
+    border: solid 1px #666;
+    color: #fff; 
+}
+
+a, a:visited {
+    color: #eee;
+    text-decoration: none;
+    border-bottom: 1px solid #ffffff00;
+    transition: all 0.2s;
+}
+
+a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.deleteButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    font-size: 20px;
+    background-color: #22222200;
+    border: 0px solid #444;
+    color: #eee;
+    cursor: pointer;
+}

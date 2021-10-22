@@ -1,0 +1,11 @@
+<div class="dashboard">
+	<h1 class="sectionTitle">Dashboard</h1>
+
+	<div class="heroListItem">
+		<a class="heroItem" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+			{{hero.name}}
+		</a>
+	</div>
+</div>
+
+<app-hero-search></app-hero-search>

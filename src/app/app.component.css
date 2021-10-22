@@ -1,0 +1,41 @@
+.navBar {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    padding: 20px;
+    background-image: linear-gradient(to right, #11347e 0%, #3584A7 51%, #30D2BE 100%);
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.menus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 50px;
+    font-size: 33px;
+}
+
+.menus > nav {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+a, a:visited {
+    color: #eee;
+    text-decoration: none;
+    border-bottom: 1px solid #ffffff00;
+    transition: all 0.2s;
+}
+
+a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.blankFirst {
+    margin-top: 120px;
+}
