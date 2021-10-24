@@ -1,28 +1,17 @@
 <div class="heroesList">
     <h1 class="sectionTitle">New hero</h1>
-    {{ model | json }}
+    Debug : {{ model | json }}
     <form class="newHeroForm" #heroForm="ngForm">
         <label for="heroName">Hero's name : </label>
-        <input 
-        id="heroName" 
-        type="text" 
-        requiered 
-        placeholder="Name of the new hero"
-        [(ngModel)]="model.name"
-        name="name"
-        />
+        <input id="heroName" type="text" requiered placeholder="Name of the new hero" [(ngModel)]="model.name"
+            name="name" />
 
         <label for="heroAlterEgo">Hero's alterego : </label>
-        <input 
-        id="heroAlterEgo"
-        type="text"
-        placeholder="Alter-ego of the Hero"
-        [(ngModel)]="model.alterEgo"
-        name="alterEgo"
-         />
+        <input id="heroAlterEgo" type="text" placeholder="Alter-ego of the Hero" [(ngModel)]="model.alterEgo"
+            name="alterEgo" />
 
         <label for="power">Hero's power : </label>
-        <select id="power" required>
+        <select id="power" required [(ngModel)]="model.power" name="power">
             <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
         </select>
 
