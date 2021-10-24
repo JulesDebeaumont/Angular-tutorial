@@ -18,8 +18,8 @@ export class HeroFormComponent implements OnInit {
     'Super Hot',
     'Weather Changer'
   ]
-  model = new Hero(-1, 'Didier', this.powers[0], 'Chuck Overstreet')
-  submited = false
+  model = new Hero(-1, '', '', '')
+  submitted = false
 
 
   constructor(
@@ -28,27 +28,21 @@ export class HeroFormComponent implements OnInit {
 
   ngOnInit(): void { }
 
+
+  /**
+   * Executer lors d'un submit d'un formulaire dans le composant
+   */
   onSubmit(): void {
-    this.submited = true
+    this.submitted = true
   }
 
   /**
    * Add a new hero to the list
-   * @param heroName Name of the new hero
-   * @returns {void}
    */
-  add(heroName: string): void {
-    heroName = heroName.trim()
-    if (heroName === undefined) {
-      return
-    }
-
-    // Ici je créer un objet avec un name qui sera égale à heroName
-    // Cet objet sera ensite défini comme une instance de Hero
-    this.heroService.createHero({ name: heroName } as Hero)
-      .subscribe((hero) => {
-        this.heroes.push(hero)
-      })
+  addHero(): void {
+    this.heroService.createHero(this.model)
+      .subscribe((hero) => this.heroes.push(hero))
+    this.submitted = false
   }
 
 }

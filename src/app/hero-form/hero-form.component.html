@@ -1,24 +1,50 @@
 <div class="heroesList">
     <h1 class="sectionTitle">New hero</h1>
     Debug : {{ model | json }}
-    <form class="newHeroForm" #heroForm="ngForm">
-        <label for="heroName">Hero's name : </label>
-        <input id="heroName" type="text" required placeholder="Name of the new hero" [(ngModel)]="model.name"
-            name="name" />
 
-        <label for="heroAlterEgo">Hero's alterego : </label>
-        <input id="heroAlterEgo" type="text" placeholder="Alter-ego of the Hero" [(ngModel)]="model.alterEgo"
-            name="alterEgo" />
+    <div [hidden]="submitted === true">
 
-        <label for="power">Hero's power : </label>
-        <select id="power" required [(ngModel)]="model.power" name="power">
-            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-        </select>
+        <!-- Créer une variable de référence heroForm ayant pour valeur ngForm -->
+        <!-- (ngSubmit) permet ici d'executer la méthode onSubmit() lors de la soumission du formulaire -->
+        <form class="newHeroForm" #heroForm="ngForm" (ngSubmit)="onSubmit()">
 
-        <!-- (click) passes input value to add() and then clears the input -->
-        <button class="backButton heroItem">
-            Add hero
-        </button>
-    </form>
+            <!-- La prop for="heroName" designe la balise avec la prop id="heroName"  -->
+            <label for="heroName">Hero's name : </label>
+
+            <!-- [(ngModel)] permet de lier la valeur de model.name au champ de saisie -->
+            <!-- La prop name permet d'assigner un nom UNIQUE au champ de saisie du formulaire
+        Cette dernière est nécéssaire lors de l'utilisatino de [(ngModel)] -->
+            <!-- #name permet de créer une variable de référence ayant pour valeur ngModel -->
+            <input id="heroName" type="text" required placeholder="Name of the new hero" [(ngModel)]="model.name"
+                name="name" #name="ngModel" />
+
+            <!-- Ici [hidden] va cacher la balise selon la variable name (déclarer juste au dessus dans la balise input -->
+            <!-- On cachera la balise (donc le message d'errur) si la saisie est valide
+        ou si l'utilisateur n'a pas changer la valeur par défaut du champ de saisie  -->
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
+
+
+            <label for="heroAlterEgo">Hero's alterego : </label>
+            <input id="heroAlterEgo" type="text" placeholder="Alter-ego of the Hero" [(ngModel)]="model.alterEgo"
+                name="alterEgo" />
+
+            <label for="power">Hero's power : </label>
+            <select id="power" required [(ngModel)]="model.power" name="power">
+                <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+            </select>
+
+            <!-- (click) passes input value to add() and then clears the input -->
+            <!-- heroForm est la variable de référence déclarer dans la balise form -->
+            <button class="backButton heroItem btn btn-success" (click)="addHero(); heroForm.reset()" type="submit"
+                [disabled]="!heroForm.form.valid">
+                Add hero
+            </button>
+
+        </form>
+    </div>
+
+    <div [hidden]="submitted === false">
+        Chargement..
+    </div>
 
 </div>
