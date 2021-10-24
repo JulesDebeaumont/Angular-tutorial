@@ -1,0 +1,10 @@
+/* Classe ng-valid qui à la props required */
+/* Classse ng-valid et required */
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid #42A948;
+}
+
+/* Classe ng-invalid qui n'a pas le focus dans un le form parent */
+.ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
+}

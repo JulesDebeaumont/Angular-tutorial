@@ -3,7 +3,7 @@
     Debug : {{ model | json }}
     <form class="newHeroForm" #heroForm="ngForm">
         <label for="heroName">Hero's name : </label>
-        <input id="heroName" type="text" requiered placeholder="Name of the new hero" [(ngModel)]="model.name"
+        <input id="heroName" type="text" required placeholder="Name of the new hero" [(ngModel)]="model.name"
             name="name" />
 
         <label for="heroAlterEgo">Hero's alterego : </label>
